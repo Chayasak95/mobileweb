@@ -12,7 +12,7 @@ export default defineConfig({
     legacy()
   ],
   build:{
-    outDir: path.resolve(__dirname,'../../doce/lab01-rvue'),
+    outDir: path.resolve(__dirname,'../../docs/lab01_vue'),
     emptyOutDir: true
   },
 

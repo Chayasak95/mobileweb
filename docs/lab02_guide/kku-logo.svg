@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="60" height="72">
+  <!-- Outer red shape -->
+  <path d="M100 10 L160 60 L140 90 L160 120 L100 170 L40 120 L60 90 L40 60 Z" fill="#C41E3A" stroke="#000" stroke-width="2"/>
+  
+  <!-- Inner temple structure (simplified) -->
+  <ellipse cx="100" cy="50" rx="20" ry="25" fill="#E8D5B7" stroke="#000" stroke-width="1"/>
+  <rect x="85" y="70" width="30" height="40" fill="#E8D5B7" stroke="#000" stroke-width="1"/>
+  <polygon points="100,65 115,75 85,75" fill="#E8D5B7" stroke="#000" stroke-width="1"/>
+  
+  <!-- Decorative elements on sides -->
+  <path d="M70 85 Q65 90 70 95" fill="none" stroke="#fff" stroke-width="2"/>
+  <path d="M130 85 Q135 90 130 95" fill="none" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Thai text base -->
+  <text x="100" y="200" font-family="Arial" font-size="12" text-anchor="middle" fill="#000" font-weight="bold">มหาวิทยาลัย</text>
+  <text x="100" y="215" font-family="Arial" font-size="12" text-anchor="middle" fill="#000" font-weight="bold">ขอนแก่น</text>
+</svg>

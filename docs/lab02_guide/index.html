@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KKU Campus Guide - แนะนำสถานที่ภายในมหาวิทยาลัยขอนแก่น</title>
+  <style>
+    :root{
+      --brick-50:#fff6f5;
+      --brick-100:#f6e1de;
+      --brick-200:#e9bfb8;
+      --brick-500:#b1442a;
+      --brick-700:#7f2b20;
+      --muted:#6b4a3a;
+      --card-bg:#fff7f6;
+    }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans',Helvetica,Arial;font-size:18px;line-height:1.6;margin:0;color:var(--brick-700);background:linear-gradient(180deg,var(--brick-50),#fff)}
+    header{display:flex;align-items:center;gap:18px;padding:26px clamp(18px,5vw,80px);background:linear-gradient(90deg,var(--brick-100),#fff);border-bottom:6px solid var(--brick-200);position:relative}
+    .brand{display:flex;align-items:center;gap:16px}
+    h1{font-size:1.6rem;margin:0;color:var(--brick-700);letter-spacing:0.6px}
+    .meta{font-size:0.9rem;color:var(--muted)}
+    main{padding:36px clamp(18px,5vw,80px);max-width:none;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(380px,1fr));gap:28px}
+    article.card{background:var(--card-bg);border:1px solid var(--brick-100);border-left:8px solid var(--brick-200);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 8px 22px rgba(139,69,53,0.08)}
+    article.card h3{margin:0;color:var(--brick-700);font-size:1.15rem}
+    .photos{display:flex;gap:12px;align-items:stretch}
+    .photo-frame{flex:1;background:var(--brick-50);padding:12px;border-radius:12px;display:block;border:1px solid var(--brick-100);box-shadow:0 6px 14px rgba(139,69,53,0.06)}
+    .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;border-radius:8px;aspect-ratio:16/9}
+    .row{display:flex;gap:12px;align-items:center}
+    .details{flex:1}
+    .meta-info ul{margin:8px 0 0 16px;padding:0}
+    .meta-info li{margin:4px 0;font-size:0.95rem}
+    footer{padding:24px;text-align:center;color:var(--muted)}
+    .form-wrap{margin-top:34px;background:linear-gradient(180deg,#fff,#fff6f5);padding:22px;border-radius:12px;border:1px solid var(--brick-100)}
+    form{display:flex;flex-direction:column;gap:14px}
+    label{font-size:1rem;color:var(--brick-700)}
+    input[type=text],input[type=url],textarea{padding:14px;border-radius:10px;border:1px solid var(--brick-100);background:#fff;font-size:0.98rem}
+    input::placeholder, textarea::placeholder{color:#b2877b}
+    button{background:var(--brick-500);color:#fff;padding:13px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700;box-shadow:0 8px 16px rgba(177,68,42,0.18);font-size:1rem}
+    .logo-canvas{width:clamp(86px,8vw,120px);height:auto;border-radius:8px;box-shadow:0 8px 16px rgba(177,68,42,0.14)}
+    .kku-logo{position:absolute;top:28px;left:16px;width:50px;height:70px;object-fit:contain}
+    h2{color:var(--brick-700);margin-top:0}
+    @media (max-width:1200px){.grid{grid-template-columns:repeat(2,minmax(320px,1fr))}}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(1,1fr)} .photos img{height:180px} .logo-canvas{width:110px;height:auto}}
+    @media (max-width:480px){header{padding:14px} .brand h1{font-size:1.1rem} .photos img{height:120px} .logo-canvas{width:86px;height:auto}}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="LogoKKU50px.png" alt="KKU Logo" class="kku-logo">
+    <div class="brand">
+      <canvas id="logo" class="logo-canvas" width="252" height="192" aria-label="KKU Guide logo"></canvas>
+      <div>
+        <h1>KKU Campus Guide</h1>
+        <div class="meta">รหัสนักศึกษา: <strong>663380009-5</strong> &nbsp; ชื่อ-สกุล: <strong>นาย ชญาศักดิ์ อบเชย</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>แนะนำสถานที่ภายในมหาวิทยาลัยขอนแก่น</h2>
+      <p class="meta">ตัวอย่างแนะนำสถานที่ 4 แห่ง พร้อมภาพประกอบ (แห่งละ 2 รูป) และรายละเอียดสั้นๆ</p>
+
+      <div class="grid" id="places">
+        <!-- Place 1 -->
+        <article class="card">
+          <h3>1. หอสมุดกลาง</h3>
+          <div class="row">
+            <div class="details">
+              <p>หอสมุดกลางของมหาวิทยาลัยขอนแก่น เป็นศูนย์รวมทรัพยากรวิชาการทั้งหนังสือ วารสาร และฐานข้อมูลอิเล็กทรอนิกส์ เหมาะสำหรับการค้นคว้า งานวิจัย และการอ่านเพื่อการเรียนรู้</p>
+            </div>
+          </div>
+          <div class="photos">
+              <div class="photo-frame">
+                <img src="library01.jpg" alt="หอสมุด - รูปที่ 1">
+              </div>
+              <div class="photo-frame">
+                <img src="library02.jpg" alt="หอสมุด - รูปที่ 2">
+              </div>
+          </div>
+          <div class="meta-info">
+            <ul>
+              <li><strong>ที่ตั้ง:</strong> ใกล้ศูนย์กลางมหาวิทยาลัย ฝั่งทิศเหนือ</li>
+              <li><strong>เวลาเปิด-ปิด:</strong> จันทร์-ศุกร์ 08:30 - 20:00, เสาร์ 09:00 - 17:00</li>
+              <li><strong>สิ่งอำนวยความสะดวก:</strong> ห้องอ่านเดี่ยว, ห้องคอมพิวเตอร์, Wi‑Fi, พื้นที่ทีมงานวิจัย</li>
+              <li><strong>คำแนะนำ:</strong> แนะนำให้ใช้ฐานข้อมูลอิเล็กทรอนิกส์สำหรับการค้นคว้าเชิงลึก</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Place 2 -->
+        <article class="card">
+          <h3>2. ศูนย์ประชุมกาญจนาภิเษก มหาวิทยาลัยขอนแก่น</h3>
+          <p>ศูนย์ประชุมอเนกประสงค์กาญจนาภิเษก มหาวิทยาลัยขอนแก่น เหมาะสำหรับการจัดประชุมสัมมนา การแสดงนิทรรศการ การจัดกิจกรรมพิเศษต่าง ๆ อาทิ การแสดงบนเวที งานจัดเลี้ยงและพิธีพระราชทานปริญญาบัตร"ศูนย์ประชุมอเนกประสงค์กาญจนาภิเษก" ตั้งอยู่บนเนื้อที่ประมาณ 60 ไร่ ภายใน บริเวณมหาวิทยาลัยขอนแก่นห่างจากบึงสีฐานไปทางทิศตะวันออก อาคารเป็นหอประชุมใหญ่ รูปทรงกูบเกวียนอีสาน (กูบหมายถึง ประทุนหลังช้าง) ลักษณะเป็นอาคาร 2 ชั้น มีพื้นที่ใช้สอย รวมทั้งสิ้น 21,160 ตารางเมดร</p>
+         <div class="photos">
+              <div class="photo-frame">
+                <img src="hall2.jpg" alt="หอประชุม - รูปที่ 1">
+              </div>
+              <div class="photo-frame">
+                <img src="hall1.jpg" alt="หอประชุม - รูปที่ 2">
+              </div>
+          </div>
+          <div class="meta-info">
+            <ul>
+              <li><strong>ที่ตั้ง:</strong> หน้ามหาวิทยาลัย</li>
+              <li><strong>เวลาเปิด-ปิด:</strong> ทุกวัน</li>
+              <li><strong>ติดต่อ:</strong> 095-6537599 หรือ goldenjubileehall.kku@gmail.com</li>
+              <li><strong>แบบฟอร์มขอใช้ศูนย์ประชุมอเนกประสงค์กาญจนาภิเษก:</strong> <a href="https://asset.kku.ac.th/wp-content/uploads/2025/10/form-goldenjubilee.pdf" target="_blank">ดาวน์โหลดแบบฟอร์ม ขอใช้งานหอประชุม (PDF)</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Place 3 -->
+        <article class="card">
+          <h3>3. สนามกีฬา</h3>
+          <p>สำนักงานปฏิบัติงานบุคลากรและการให้บริการ ประกอบด้วยงานบริการสถานกีฬางานส่งเสริมกิจกรรมกีฬา และหน่วยอำนวยการ โดยบริหารงานภายใต้การกำกับดูแลของฝ่ายกิจการนักศึกษาและนวัตวณิชย์</p>
+          <div class="photos">
+              <div class="photo-frame">
+                <img src="sport1.png" alt="สนามกีฬา - รูปที่ 1">
+              </div>
+              <div class="photo-frame">
+                <img src="sport2.jpg" alt="สนามกีฬา - รูปที่ 2">
+              </div>
+          </div>
+          <div class="meta-info">
+            <ul>
+              <li><strong>ที่ตั้ง:</strong> ติดกับศูนย์กีฬาและสวนสาธารณะ</li>
+              <li><strong>เวลาเปิด-ปิด:</strong> เปิดให้บริการทุกวันจันทร์ ถึง วันศุกร์ ตั้งแต่เวลา 08.30 – 16.30 น. หยุดทุกวันเสาร์ -อาทิตย์ และวันหยุดนักขัตฤกษ์</li>
+              <li><strong>สิ่งอำนวยความสะดวก:</strong> อุปกรณ์ครบเหมาะสำหรับการออกกำลังกายทุกชนิด</li>
+              <li><strong>คำแนะนำ:</strong> เหมาะสมสำหรับการฝึกซ้อมและชมการแข่งขันภายในมหาวิทยาลัย</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Place 4 -->
+        <article class="card">
+          <h3>4. ศูนย์อาหารและบริการ 2 (โรงชาย)</h3>
+          <p>ศูนย์อาหารที่มีร้านขายของกินมากมายและมีที่จอดรถครบ</p>
+         <div class="photos">
+              <div class="photo-frame">
+                <img src="food01.jpg" alt="food01 - รูปที่ 1">
+              </div>
+              <div class="photo-frame">
+                <img src="food02.jpg" alt="food02 - รูปที่ 2">
+              </div>
+          </div>
+          <div class="meta-info">
+            <ul>
+              <li><strong>ที่ตั้ง:</strong> รอบพื้นที่ศูนย์กลางมหาวิทยาลัย</li>
+              <li><strong>เวลาเปิด-ปิด:</strong> เปิดตลอดวัน</li>
+              <li><strong>สิ่งอำนวยความสะดวก:</strong> ทางเดิน, ม้านั่ง</li>
+              <li><strong>คำแนะนำ:</strong> เหมาะสำหรับการพักผ่อนและถ่ายรูปในช่วงเช้าหรือเย็น</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="form-wrap">
+        <h3>แบบฟอร์มแนะนำสถานที่</h3>
+        <p class="meta">ส่งข้อมูลสถานที่ใหม่โดยกรอกด้านล่าง (เชื่อมต่อกับ web3forms — ใส่ access key ของคุณใน `access_key`)</p>
+        <form id="placeForm" method="POST" action="https://api.web3forms.com/submit">
+          <!-- Replace the access_key value with your Web3Forms access key after sign-up -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <label>
+            ชื่อสถานที่
+            <input type="text" name="place_name" required placeholder="ชื่อสถานที่ เช่น หอสมุดกลาง">
+          </label>
+          <label>
+            รายละเอียด
+            <textarea name="message" rows="4" required placeholder="รายละเอียดสถานที่"></textarea>
+          </label>
+          <label>
+            URL ของภาพ (คั่นด้วยช่องว่าง หรือใส่ URL รูปหลัก)
+            <input type="url" name="image_url" placeholder="https://...">
+          </label>
+          <button type="submit">ส่งคำแนะนำ</button>
+        </form>
+      </div>
+
+      <section id="campus-map" style="margin-top:28px">
+        <h3>แผนที่วิทยาเขต KKU</h3>
+        <p class="meta">แผนที่แสดงตำแหน่งของสถานที่สำคัญภายในมหาวิทยาลัยขอนแก่น</p>
+        <img src="map.jpg" alt="KKU Campus Map" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--brick-100);box-shadow:0 8px 18px rgba(139,69,53,0.06);">
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <h3>ติดต่อและลิงก์ที่เป็นประโยชน์</h3>
+        <ul>
+          
+          <li>เว็บไซต์มหาวิทยาลัยขอนแก่น: https://www.kku.ac.th/ (ข้อมูลเพิ่มเติมเกี่ยวกับแผนที่และบริการ)</li>
+          
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <small>KKU Campus Guide — สร้างโดย นาย ชญาศักดิ์ อบเชย (663380009-5)</small>
+  </footer>
+
+  <script>
+    // Canvas logo with animation
+    const canvas = document.getElementById('logo');
+    const ctx = canvas.getContext('2d');
+    let t = 0;
+    function drawLogo(){
+      const w = canvas.width, h = canvas.height;
+      ctx.clearRect(0,0,w,h);
+      // background
+      const grad = ctx.createLinearGradient(0,0,w,0);
+      grad.addColorStop(0, '#ffd9d5');
+      grad.addColorStop(0.5, '#f3b8aa');
+      grad.addColorStop(1, '#b1442a');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,w,h);
+      // moving circle
+      const cx = w*0.25 + Math.sin(t*0.02)*18;
+      const cy = h*0.58 + Math.cos(t*0.025)*8;
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(255,255,255,0.85)';
+      ctx.arc(cx,cy,18,0,Math.PI*2);
+      ctx.fill();
+      // KKU text with shadow
+      ctx.font = 'bold 40px sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillStyle = 'rgba(255,245,242,0.98)';
+      ctx.fillText('KKU', w*0.95, h*0.45);
+      ctx.font = '14px sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillStyle = 'rgba(255,245,242,0.95)';
+      ctx.fillText('Campus Guide', w*0.95, h*0.65);
+      t++;
+      requestAnimationFrame(drawLogo);
+    }
+    drawLogo();
+
+    // Optional: simple client-side success handling for demo (web3forms will redirect/return JSON depending on your config)
+    document.getElementById('placeForm').addEventListener('submit', (e)=>{
+      const key = document.querySelector('input[name="access_key"]').value;
+      if(key === 'YOUR_ACCESS_KEY_HERE'){
+        // prevent submitting to API if no key provided, show demo message
+        e.preventDefault();
+        alert('Demo: แบบฟอร์มจะส่งข้อมูลเมื่อคุณใส่ access_key จาก web3forms.com ลงในฟอร์ม');
+      }
+    });
+  </script>
+</body>
+</html>

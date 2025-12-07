@@ -173,10 +173,10 @@
 
       <div class="form-wrap">
         <h3>แบบฟอร์มแนะนำสถานที่</h3>
-        <p class="meta">ส่งข้อมูลสถานที่ใหม่โดยกรอกด้านล่าง (เชื่อมต่อกับ web3forms — ใส่ access key ของคุณใน `access_key`)</p>
+       
         <form id="placeForm" method="POST" action="https://api.web3forms.com/submit">
           <!-- Replace the access_key value with your Web3Forms access key after sign-up -->
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <input type="hidden" name="access_key" value="78956895-c959-4b3e-a0ce-70322a32c4e6">
           <label>
             ชื่อสถานที่
             <input type="text" name="place_name" required placeholder="ชื่อสถานที่ เช่น หอสมุดกลาง">
@@ -301,15 +301,7 @@
     }
 
 
-    // Optional: simple client-side success handling for demo (web3forms will redirect/return JSON depending on your config)
-    document.getElementById('placeForm').addEventListener('submit', (e)=>{
-      const key = document.querySelector('input[name="access_key"]').value;
-      if(key === 'YOUR_ACCESS_KEY_HERE'){
-        // prevent submitting to API if no key provided, show demo message
-        e.preventDefault();
-        alert('Demo: แบบฟอร์มจะส่งข้อมูลเมื่อคุณใส่ access_key จาก web3forms.com ลงในฟอร์ม');
-      }
-    });
+    
   </script>
 </body>
 </html>

@@ -39,18 +39,31 @@
     input::placeholder, textarea::placeholder{color:#b2877b}
     button{background:var(--brick-500);color:#fff;padding:13px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700;box-shadow:0 8px 16px rgba(177,68,42,0.18);font-size:1rem}
     .logo-canvas{width:clamp(86px,8vw,120px);height:auto;border-radius:8px;box-shadow:0 8px 16px rgba(177,68,42,0.14)}
-    .kku-logo{position:absolute;top:28px;left:16px;width:50px;height:70px;object-fit:contain}
+    .kku-logo{
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 50px;
+      height: 70px;
+      object-fit: contain;
+      z-index: 3;
+      border: 2px solid rgba(177,68,42,0.14);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.95);
+      padding: 4px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
     h2{color:var(--brick-700);margin-top:0}
     @media (max-width:1200px){.grid{grid-template-columns:repeat(2,minmax(320px,1fr))}}
     @media (max-width:900px){.grid{grid-template-columns:repeat(1,1fr)} .photos img{height:180px} .logo-canvas{width:110px;height:auto}}
     @media (max-width:480px){header{padding:14px} .brand h1{font-size:1.1rem} .photos img{height:120px} .logo-canvas{width:86px;height:auto}}
   </style>
 </head>
+
 <body>
   <header>
-    <img src="LogoKKU50px.png" alt="KKU Logo" class="kku-logo">
     <div class="brand">
-      <canvas id="logo" class="logo-canvas" width="252" height="192" aria-label="KKU Guide logo"></canvas>
+      <canvas id="logo" class="logo-canvas" width="300" height="240" aria-label="KKU Guide logo"></canvas>
       <div>
         <h1>KKU Campus Guide</h1>
         <div class="meta">รหัสนักศึกษา: <strong>663380009-5</strong> &nbsp; ชื่อ-สกุล: <strong>นาย ชญาศักดิ์ อบเชย</strong></div>
@@ -202,50 +215,101 @@
   </footer>
 
   <script>
-    // Canvas logo with animation
-    const canvas = document.getElementById('logo');
-    const ctx = canvas.getContext('2d');
-    let t = 0;
-    function drawLogo(){
-      const w = canvas.width, h = canvas.height;
-      ctx.clearRect(0,0,w,h);
-      // background
-      const grad = ctx.createLinearGradient(0,0,w,0);
-      grad.addColorStop(0, '#ffd9d5');
-      grad.addColorStop(0.5, '#f3b8aa');
-      grad.addColorStop(1, '#b1442a');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0,0,w,h);
-      // moving circle
-      const cx = w*0.25 + Math.sin(t*0.02)*18;
-      const cy = h*0.58 + Math.cos(t*0.025)*8;
-      ctx.beginPath();
-      ctx.fillStyle = 'rgba(255,255,255,0.85)';
-      ctx.arc(cx,cy,18,0,Math.PI*2);
-      ctx.fill();
-      // KKU text with shadow
-      ctx.font = 'bold 40px sans-serif';
-      ctx.textAlign = 'right';
-      ctx.fillStyle = 'rgba(255,245,242,0.98)';
-      ctx.fillText('KKU', w*0.95, h*0.45);
-      ctx.font = '14px sans-serif';
-      ctx.textAlign = 'right';
-      ctx.fillStyle = 'rgba(255,245,242,0.95)';
-      ctx.fillText('Campus Guide', w*0.95, h*0.65);
-      t++;
-      requestAnimationFrame(drawLogo);
-    }
-    drawLogo();
+    // Canvas logo with new Shield/Glow animation
+    const canvas = document.getElementById('logo');
+    const ctx = canvas.getContext('2d');
+    let t = 0;
+    
+    function roundRect(ctx, x, y, width, height, radius) {
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+    }
 
-    // Optional: simple client-side success handling for demo (web3forms will redirect/return JSON depending on your config)
-    document.getElementById('placeForm').addEventListener('submit', (e)=>{
-      const key = document.querySelector('input[name="access_key"]').value;
-      if(key === 'YOUR_ACCESS_KEY_HERE'){
-        // prevent submitting to API if no key provided, show demo message
-        e.preventDefault();
-        alert('Demo: แบบฟอร์มจะส่งข้อมูลเมื่อคุณใส่ access_key จาก web3forms.com ลงในฟอร์ม');
-      }
-    });
-  </script>
+    function drawLogo(){
+      const w = canvas.width, h = canvas.height;
+      ctx.clearRect(0,0,w,h);
+
+      // 1. Base Gradient Background (Shield Shape)
+      const gradBase = ctx.createLinearGradient(0, 0, w, h);
+      gradBase.addColorStop(0, 'rgba(246, 225, 222, 0.8)'); // Light brick
+      gradBase.addColorStop(1, 'rgba(177, 68, 42, 0.5)'); // Dark brick
+      ctx.fillStyle = gradBase;
+      
+      // Draw a smooth rounded rectangle
+      const pad = 20;
+      roundRect(ctx, pad/2, pad/2, w-pad, h-pad, 15);
+      ctx.fill();
+      
+      // 2. Neon Glow Effect (Moving Circles)
+      const centerX = w * 0.5;
+      const centerY = h * 0.5;
+      const radius = 35;
+      
+      // Outer Glow Circle 1 (Orange/Red)
+      const glowX1 = centerX + Math.sin(t * 0.03) * (centerX - radius - 10);
+      const glowY1 = centerY + Math.cos(t * 0.04) * (centerY - radius - 10);
+      const gradGlow1 = ctx.createRadialGradient(glowX1, glowY1, 1, glowX1, glowY1, 30);
+      gradGlow1.addColorStop(0, 'rgba(255, 120, 80, 0.5)');
+      gradGlow1.addColorStop(1, 'rgba(255, 120, 80, 0)');
+      ctx.fillStyle = gradGlow1;
+      ctx.beginPath();
+      ctx.arc(glowX1, glowY1, 30, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Outer Glow Circle 2 (White/Light)
+      const glowX2 = centerX + Math.cos(t * 0.02) * (centerX - radius - 20);
+      const glowY2 = centerY + Math.sin(t * 0.035) * (centerY - radius - 15);
+      const gradGlow2 = ctx.createRadialGradient(glowX2, glowY2, 1, glowX2, glowY2, 25);
+      gradGlow2.addColorStop(0, 'rgba(255, 255, 255, 0.6)');
+      gradGlow2.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      ctx.fillStyle = gradGlow2;
+      ctx.beginPath();
+      ctx.arc(glowX2, glowY2, 25, 0, Math.PI * 2);
+      ctx.fill();
+
+
+      // 3. Central KKU Text
+      ctx.font = 'bold 50px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = 'rgba(177, 68, 42, 0.8)';
+      ctx.fillStyle = 'rgba(255, 245, 242, 0.98)';
+      ctx.fillText('KKU', centerX, centerY - 10);
+      
+      ctx.font = '16px sans-serif';
+      ctx.shadowBlur = 0; // Reset shadow
+      ctx.fillStyle = 'rgba(255, 245, 242, 0.8)';
+      ctx.fillText('Guide', centerX, centerY + 25);
+
+      t++;
+      requestAnimationFrame(drawLogo);
+    }
+    
+    // Start the animation only if canvas is found
+    if(canvas) {
+        drawLogo();
+    }
+
+
+    // Optional: simple client-side success handling for demo (web3forms will redirect/return JSON depending on your config)
+    document.getElementById('placeForm').addEventListener('submit', (e)=>{
+      const key = document.querySelector('input[name="access_key"]').value;
+      if(key === 'YOUR_ACCESS_KEY_HERE'){
+        // prevent submitting to API if no key provided, show demo message
+        e.preventDefault();
+        alert('Demo: แบบฟอร์มจะส่งข้อมูลเมื่อคุณใส่ access_key จาก web3forms.com ลงในฟอร์ม');
+      }
+    });
+  </script>
 </body>
 </html>

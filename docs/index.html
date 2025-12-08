@@ -94,7 +94,7 @@
 
               <div class="d-flex gap-2">
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lab03Modal">แสดงตัวอย่าง</button>
-                <a href="lab03typescript/app.html" class="btn btn-outline-primary" target="_blank" rel="noopener">เปิดในแท็บใหม่</a>
+                <a href="lab03Typescript/app.html" class="btn btn-outline-primary" target="_blank" rel="noopener">เปิดในแท็บใหม่</a>
               </div>
 
             </div>
@@ -136,8 +136,8 @@
         var frame = document.getElementById('lab03ModalFrame');
         if (!modalEl || !frame) return;
         modalEl.addEventListener('show.bs.modal', function () {
-          if (frame.getAttribute('src') === 'about:blank') {
-            frame.setAttribute('src', 'lab03typescript/app.html');
+            if (frame.getAttribute('src') === 'about:blank') {
+            frame.setAttribute('src', 'lab03Typescript/app.html');
           }
         });
         // Optionally clear src on hide to stop running scripts

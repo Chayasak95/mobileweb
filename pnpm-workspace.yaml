@@ -1,4 +1,6 @@
 packages:
-  - 'apps/*'
-  - 'shared/*'
-  
+  - apps/*
+  - shared/*
+
+patchedDependencies:
+  '@capacitor-firebase/authentication': patches/@capacitor-firebase__authentication.patch
